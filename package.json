@@ -3,10 +3,43 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start"
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "lint": "eslint src",
+    "test": "jest"
+  },
+  "jest": {
+    "scriptPreprocessor": "node_modules/react-native/jestSupport/preprocessor.js",
+    "setupEnvScriptFile": "node_modules/react-native/jestSupport/env.js",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "packager/react-packager/src/Activity/"
+    ],
+    "testFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "unmockedModulePathPatterns": [
+      "promise",
+      "source-map"
+    ]
   },
   "dependencies": {
+    "immutable": "^3.7.6",
     "react-native": "^0.18.1",
-    "redux": "^3.0.5"
+    "react-redux": "^4.0.6",
+    "redux": "^3.0.5",
+    "redux-promise": "^0.5.1",
+    "remote-redux-devtools": "^0.1.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.4.5",
+    "babel-eslint": "^4.1.6",
+    "eslint": "^1.10.3",
+    "eslint-config-airbnb": "^4.0.0",
+    "eslint-plugin-react": "^3.16.0",
+    "eslint-plugin-react-native": "^0.5.0",
+    "install": "^0.4.1",
+    "jest-cli": "^0.8.2",
+    "npm": "^3.5.3"
   }
 }
