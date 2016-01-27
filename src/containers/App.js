@@ -1,8 +1,19 @@
+import I18n from 'react-native-i18n';
 import React, {
   StyleSheet,
   Text,
   View,
 } from 'react-native';
+
+I18n.fallbacks = true;
+I18n.translations = {
+  en: {
+    welcome: 'Welcome to React Native (EN)'
+  },
+  es: {
+    welcome: 'Bienvenido a RN (ES)'
+  }
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -26,7 +37,7 @@ const styles = StyleSheet.create({
 const App = ({ platfform }) => (
     <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native {platfform}!
+          {I18n.t('welcome')} {platfform}!!
         </Text>
         <Text style={styles.instructions}>
           To get started, edit index.android.js

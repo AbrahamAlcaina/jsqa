@@ -25,15 +25,17 @@
   },
   "dependencies": {
     "immutable": "^3.7.6",
+    "react": "^0.14.6",
     "react-native": "^0.18.1",
+    "react-native-i18n": "0.0.7",
     "react-redux": "^4.0.6",
     "redux": "^3.0.5",
-    "redux-promise": "^0.5.1",
+    "redux-promise-middleware": "^2.3.3",
     "remote-redux-devtools": "^0.1.0"
   },
   "devDependencies": {
     "babel-core": "^6.4.5",
-    "babel-eslint": "^4.1.6",
+    "babel-eslint": "^5.0.0-beta6",
     "eslint": "^1.10.3",
     "eslint-config-airbnb": "^4.0.0",
     "eslint-plugin-react": "^3.16.0",

@@ -1,6 +1,7 @@
 package com.jsqa;
 
 import com.facebook.react.ReactActivity;
+import com.i18n.reactnativei18n.ReactNativeI18n;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 
@@ -8,6 +9,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends ReactActivity {
+
+
 
     /**
      * Returns the name of the main component registered from JavaScript.
@@ -34,6 +37,8 @@ public class MainActivity extends ReactActivity {
     @Override
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
-        new MainReactPackage());
+        new MainReactPackage(),
+        new ReactNativeI18n());
     }
+
 }
