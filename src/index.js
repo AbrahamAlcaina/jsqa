@@ -1,7 +1,7 @@
 import React, { AppRegistry } from 'react-native'; // eslint-disable-line no-unused-vars
 import { Provider } from 'react-redux';
 import { configureStore } from './store';
-import App from './containers/App';
+import { App } from './components/pages';
 
 export const initialize = () => {
   const store = configureStore();
