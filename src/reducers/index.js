@@ -1,10 +1,10 @@
-// import { combineReducers } from 'redux';
+import { combineReducers } from 'redux';
 import main from './main';
-//
-// const rootReducer = combineReducers({
-//   main
-// });
-//
-// export default rootReducer;
+import splash from './splash';
 
-export default main;
+const rootReducer = combineReducers({
+  main,
+  splash
+});
+
+export default rootReducer;

@@ -14,5 +14,5 @@ export const configureStore = () => {
   if (process.env.NODE_ENV === 'development') {
     createStoreWithMiddleware = compose(applyMiddleware(...middlewares), devTools())(createStore);
   }
-  return createStoreWithMiddleware(rootReducer);
+  return createStoreWithMiddleware(rootReducer, {});
 };
