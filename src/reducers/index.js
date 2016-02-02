@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
-import main from './main';
+import categories from './categories';
 import splash from './splash';
 
 const rootReducer = combineReducers({
-  main,
+  categories,
   splash
 });
 

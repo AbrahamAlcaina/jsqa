@@ -1,7 +1,7 @@
 const LOAD = 'LOAD';
 
 const initialState = {
-  loadded: false
+  loaded: false
 };
 
 export default function reducer(state = initialState, action = {}) {

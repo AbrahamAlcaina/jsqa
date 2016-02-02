@@ -1,2 +1,2 @@
-export { App } from './app';
 export { Splash } from './splash';
+export { Categories } from './categories';

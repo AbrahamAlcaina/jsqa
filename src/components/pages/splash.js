@@ -1,17 +1,26 @@
 import style from './splash.style';
-import i18N from './splash.i18n';
+import i18n from '../i18n';
 import React, {
   Text,
   View,
-  Component
+  Component,
+  PropTypes
 } from 'react-native';
 
 export class splash extends Component {
-  displayName = 'Splash page';
+  static displayName = 'Splash page';
+  static propTypes = {
+    load: PropTypes.func.isRequired
+  };
+
+  componentDidMount() {
+    this.props.load();
+  }
+
   render() {
     return (
         <View style={style.container}>
-            <Text>{i18N.t('splash')}</Text>
+            <Text>{i18n.t('splash')}</Text>
         </View>
     );
   }

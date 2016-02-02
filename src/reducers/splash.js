@@ -7,14 +7,20 @@ const initialState = {
 };
 
 export default handleActions({
-  [LOAD_QUESTIONS]: {
-    LOADING: (state) => ({ ...state, loading: true }),
-    SUCCESS: (state, action) =>
-        ({ ...state, loaded: true, loading: false, questions: action.payload }),
-    ERROR: (state, action) => ({ ...state, loaded: false, loading: false, error: action.payload }),
-  }
+  LOAD_QUESTIONS_LOADING: (state) => ({ ...state, loading: true }),
+  LOAD_QUESTIONS_SUCCESS: (state, action) =>
+    ({ ...state, loaded: true, loading: false, questions: action.payload }),
+  LOAD_QUESTIONS_ERROR: (state, action) =>
+    ({ ...state, loaded: false, loading: false, error: action.payload })
 }, initialState);
 
+function loadQuestions() {
+  return new Promise(resolve => {
+    const questions = require('../../qa.json');
+    resolve(questions);
+  });
+}
+
 export const load = createAction(LOAD_QUESTIONS, () => ({
-  promise: () => require('../../qa.json')
+  promise: loadQuestions()
 }));

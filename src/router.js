@@ -1,9 +1,9 @@
 import React, { Navigator, PropTypes, Component } from 'react-native';
 import { Router, Route, Schema } from 'react-native-router-flux';
-import { Splash } from './components/pages';
+import { Splash, Categories } from './components/pages';
+import * as splashActions from './reducers/splash';
 
 import { connect } from 'react-redux';
-import * as splashActionCreator from './reducers/splash';
 
 export class router extends Component {
   static displayName = 'router';
@@ -11,18 +11,26 @@ export class router extends Component {
     store: PropTypes.object.isRequired
   };
   render() {
-    debugger;
     return (
-        <Router hideNavBar>
+        <Router
+          hideNavBar
+        >
             <Schema
               name="normal"
               sceneConfig={Navigator.SceneConfigs.FloatFromBottom}
             />
             <Route
-              component={connect(state => state, splashActionCreator)(Splash)}
+              component={connect(state => state, splashActions)(Splash)}
               initial
               name="splash"
               title="Splash"
+              wrapRouter
+            />
+            <Route
+              component={connect(state => state)(Categories)}
+              name="categories"
+              schema="normal"
+              title="categories"
               wrapRouter
             />
         </Router>
