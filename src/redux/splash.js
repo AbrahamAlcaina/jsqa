@@ -14,13 +14,10 @@ export default handleActions({
     ({ ...state, loaded: false, loading: false, error: action.payload })
 }, initialState);
 
-function loadQuestions() {
-  return new Promise(resolve => {
+export const loadApp = createAction(LOAD_QUESTIONS, () => ({
+  promise: new Promise(resolve => {
     const questions = require('../../qa.json');
-    resolve(questions);
-  });
-}
-
-export const load = createAction(LOAD_QUESTIONS, () => ({
-  promise: loadQuestions()
+    // simutale load from server
+    setTimeout(() => resolve(questions), 500);
+  })
 }));

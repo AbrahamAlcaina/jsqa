@@ -1,9 +1,11 @@
 import React, { Navigator, PropTypes, Component } from 'react-native';
 import { Router, Route, Schema } from 'react-native-router-flux';
 import { Splash, Categories } from './components/pages';
-import * as splashActions from './reducers/splash';
-
+import * as splashActions from './redux/splash';
+import * as navigateActions from './redux/navigate';
 import { connect } from 'react-redux';
+
+const actions = Object.assign({}, splashActions, navigateActions);
 
 export class router extends Component {
   static displayName = 'router';
@@ -20,7 +22,7 @@ export class router extends Component {
               sceneConfig={Navigator.SceneConfigs.FloatFromBottom}
             />
             <Route
-              component={connect(state => state, splashActions)(Splash)}
+              component={connect(state => state, actions)(Splash)}
               initial
               name="splash"
               title="Splash"

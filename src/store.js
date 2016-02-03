@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import promiseMiddleware from 'redux-promise-middleware';
-import rootReducer from './reducers';
+import rootReducer from './redux';
 import devTools from 'remote-redux-devtools';
 
 const middlewares = [promiseMiddleware({
