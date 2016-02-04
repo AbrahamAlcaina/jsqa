@@ -24,7 +24,7 @@ export class splash extends Component {
 
   componentWillUpdate(nextProps) {
     if (nextProps.splash.loaded && this.props.splash.loading) {
-      this.props.push('categories');
+      this.props.push('home');
     }
   }
 

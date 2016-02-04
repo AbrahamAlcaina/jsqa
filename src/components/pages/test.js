@@ -2,17 +2,17 @@ import React, { Component, View, Text } from 'react-native';
 import i18n from '../i18n';
 import styles from './categories.style';
 
-export class categories extends Component {
-  static displayName = 'categories';
+export class test extends Component {
+  static displayName = 'test';
   render() {
     return (
         <View style={styles.container}>
             <Text>
-              {i18n.t('categories')}
+              {i18n.t('test')}
             </Text>
         </View>
     );
   }
 }
 
-export const Categories = categories;
+export const Test = test;
