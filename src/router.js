@@ -1,14 +1,6 @@
 import React, { Navigator, PropTypes, Component } from 'react-native';
 import { Router, Route, Schema } from 'react-native-router-flux';
-import { Categories, Test, Stats } from './components/pages';
-import { Splash } from './containers';
-import { Nav } from './components/organisms';
-import * as categoriesActions from './redux/categories';
-import * as navigateActions from './redux/navigate';
-import { connect } from 'react-redux';
-
-const actions = Object.assign({}, categoriesActions, navigateActions);
-
+import * as container from './containers';
 
 export class router extends Component {
   static displayName = 'router';
@@ -19,37 +11,37 @@ export class router extends Component {
     return (
         <Router>
             <Schema
-              footer={connect(state => ({ state }), navigateActions)(Nav)}
+              footer={container.Nav}
               name="normal"
               sceneConfig={Navigator.SceneConfigs.FloatFromBottom}
             />
             <Route
-              component={Splash}
+              component={container.Splash}
               initial
               name="splash"
               title="Splash"
             />
             <Route
-              component={Categories}
+              component={container.Categories}
               name="categories"
               schema="normal"
               title="categories"
             />
             <Route
-              component={Categories}
+              component={container.Categories}
               name="home"
               schema="normal"
               title="categories"
               type="replace"
             />
             <Route
-              component={connect(state => ({ state }), actions)(Stats)}
+              component={container.Stats}
               name="stats"
               schema="normal"
               title="stats"
             />
             <Route
-              component={connect(state => ({ state }), actions)(Test)}
+              component={container.Test}
               name="test"
               schema="normal"
               title="Test"
