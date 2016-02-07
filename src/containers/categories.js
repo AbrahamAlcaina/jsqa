@@ -5,7 +5,7 @@ import * as navigateActions from '../redux/navigate';
 
 const selector = createSelector(
   [state => state.get('categories')],
-  state => ({ categories: state }));
+  state => ({ categories: state.get('categories') }));
 
 const actions = Object.assign({}, navigateActions);
 

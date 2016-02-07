@@ -22,7 +22,6 @@ export class splash extends Component {
   }
 
   componentWillUpdate(nextProps) {
-    debugger;
     if (nextProps.categories.get('loaded')) {
       this.props.push('home');
     }

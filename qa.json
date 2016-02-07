@@ -1,7 +1,16 @@
 {
   "categories": [
     {
-      "name" : "var"
+      "name" : "var",
+      "content": "all about var declarations"
+    },
+    {
+      "name" : "this",
+      "content": "All the secrets of this"
+    },
+    {
+      "name" : "wat",
+      "content": "What how it's possible?"
     }
   ]
 }
