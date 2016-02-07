@@ -1,4 +1,5 @@
 import { Actions } from 'react-native-router-flux';
+import { Map } from 'immutable';
 import { handleActions, createAction } from 'redux-actions';
 
 export const PUSH = 'PUSH';
@@ -26,10 +27,7 @@ export const reset = createAction(RESET, (name, data) => {
 export const pop = createAction(POP);
 
 export default handleActions({
-  PUSH: (state, action) => ({ ...state, name: action.name, data: action.data }),
-  RESET: (state, action) => ({ name: action.name, data: action.data }),
-  POP: (state) => {
-    const res = [...state];
-    return res.filter((item, i) => i < res.length - 1);
-  }
+  PUSH: (state, action) => state.push(Map({ name: action.name, data: action.data })),
+  RESET: (state, action) => Map({ name: action.name, data: action.data }),
+  POP: (state) => state.filter((item, i) => i < state.length - 1)
 }, {});

@@ -10,12 +10,11 @@ import React, {
 export class splash extends Component {
   static displayName = 'Splash page';
   static propTypes = {
+    categories: PropTypes.shape({
+      get: PropTypes.func.isRequired
+    }),
     loadApp: PropTypes.func.isRequired,
-    push: PropTypes.func.isRequired,
-    splash: PropTypes.shape({
-      loaded: PropTypes.bool.isRequired,
-      loading: PropTypes.bool
-    })
+    push: PropTypes.func.isRequired
   };
 
   componentDidMount() {
@@ -23,7 +22,8 @@ export class splash extends Component {
   }
 
   componentWillUpdate(nextProps) {
-    if (nextProps.splash.loaded && this.props.splash.loading) {
+    debugger;
+    if (nextProps.categories.get('loaded')) {
       this.props.push('home');
     }
   }
@@ -32,6 +32,8 @@ export class splash extends Component {
     return (
         <View style={style.container}>
             <Text>{i18n.t('splash')}</Text>
+            <Text>{this.props.categories.get('loading')}</Text>
+            <Text>{this.props.categories.get('loaded')}</Text>
         </View>
     );
   }

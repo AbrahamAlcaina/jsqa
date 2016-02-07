@@ -1,11 +1,11 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from 'redux-immutable';
 import categories from './categories';
-import splash from './splash';
 import navigate from './navigate';
+import intializeState from './intializeState';
 
 const rootReducer = combineReducers({
   categories,
-  splash,
+  intializeState,
   navigate
 });
 
