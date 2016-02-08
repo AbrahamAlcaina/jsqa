@@ -1,8 +1,61 @@
 {
   "categories": [
     {
+      "name": "functions",
+      "content": "",
+      "questions": [
+        {
+          "id": 1,
+          "title": "",
+          "difficulty": 1,
+          "type": "singleChoice",
+          "statementPreCode" : "What's the value of variableA after the following script executes?",
+          "code" : " var variableA = 10;function pow() { variableA *= variableA; }();",
+          "statementPostCode": "",
+          "answers" : [
+            {
+              "id":1,
+              "text" : "NaN",
+              "code" : false
+            },
+            {
+              "id":2,
+              "text" : "10",
+              "code" : false
+            },
+            {
+              "id":3,
+              "text" : "100",
+              "code" : false
+            },
+            {
+              "id":4,
+              "text" : "1000",
+              "code" : false
+            },
+            {
+              "id":5,
+              "text" : "undefined",
+              "code" : false,
+              "correct": "true"
+            }
+          ],
+          "explanation": {
+            "text": "The IIFE has not been autoexecuted, we could do so by writing: !function pow() { variableA *= variableA; }(); But it's considered a bad practice, you should do: (function pow() { variableA *= variableA; })();",
+            "code": "true"
+          }
+        }
+      ]
+    },
+    {
       "name" : "var",
-      "content": "all about var declarations"
+      "content": "all about var declarations",
+      "questions": [
+        {
+          "id": 1,
+          "statement": ""
+        }
+      ]
     },
     {
       "name" : "this",
