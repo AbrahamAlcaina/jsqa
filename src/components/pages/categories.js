@@ -1,12 +1,13 @@
 import React, { Component, View, ScrollView, Text, PropTypes } from 'react-native';
-import i18n from '../i18n';
 import styles from './categories.style';
 import { MKCardStyles } from 'react-native-material-kit';
 
 export class categories extends Component {
   static displayName = 'categories';
   static propTypes = {
-    categories: PropTypes.object.isRequired
+    categories: PropTypes.shape({
+      map: PropTypes.function
+    })
   };
   render() {
     return (
