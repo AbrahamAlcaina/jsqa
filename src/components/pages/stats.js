@@ -1,18 +1,16 @@
-import React, { Component, View, Text } from 'react-native';
+import React, { View, Text } from 'react-native';
 import i18n from '../i18n';
 import styles from './categories.style';
 
-export class stats extends Component {
-  static displayName = 'categories';
-  render() {
-    return (
-        <View style={styles.container}>
-            <Text>
-              {i18n.t('stats')}
-            </Text>
-        </View>
-    );
-  }
-}
+const stats = () =>
+  (
+    <View style={styles.container}>
+        <Text>
+          {i18n.t('stats')}
+        </Text>
+    </View>
+  );
+
+stats.displayName = 'categories';
 
 export const Stats = stats;
