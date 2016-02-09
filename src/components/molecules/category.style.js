@@ -7,8 +7,7 @@ export default StyleSheet.create({
     backgroundColor: '#F5FCFF',
     padding: 20
   },
-  scrollView: {
-    flex: 1,
-    marginTop: 150
+  progress: {
+    width: 150
   }
 });

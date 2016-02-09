@@ -1,6 +1,7 @@
 {
   "categories": [
     {
+      "id": 1,
       "name": "functions",
       "content": "All about functions",
       "questions": [
@@ -48,6 +49,7 @@
       ]
     },
     {
+      "id": 2,
       "name" : "var",
       "content": "all about var declarations",
       "questions": [
@@ -58,10 +60,12 @@
       ]
     },
     {
+      "id": 3,
       "name" : "this",
       "content": "All the secrets of this"
     },
     {
+      "id": 4,
       "name" : "wat",
       "content": "What how it's possible?"
     }
