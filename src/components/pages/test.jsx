@@ -1,6 +1,7 @@
 import React, { View, Text } from 'react-native';
 import i18n from '../i18n';
 import styles from './categories.style';
+import { pureRender } from '../pureRender';
 
 const test = () =>
   (
@@ -13,4 +14,4 @@ const test = () =>
 
 test.displayName = 'test';
 
-export const Test = test;
+export const Test = pureRender(test);

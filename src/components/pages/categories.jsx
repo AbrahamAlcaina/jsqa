@@ -1,6 +1,7 @@
 import React, { ScrollView, PropTypes } from 'react-native';
 import styles from './categories.style';
 import { Category } from '../molecules';
+import { pureRender } from '../pureRender';
 
 const categoriesComponent = ({ categories }) =>
 (
@@ -21,4 +22,4 @@ categoriesComponent.propTypes = {
   })
 };
 
-export const Categories = categoriesComponent;
+export const Categories = pureRender(categoriesComponent, 'categories');

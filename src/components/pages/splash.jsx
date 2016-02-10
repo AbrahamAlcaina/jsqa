@@ -6,6 +6,7 @@ import React, {
   Component,
   PropTypes
 } from 'react-native';
+import { pureRender } from '../pureRender';
 
 export class splash extends Component {
   static displayName = 'Splash page';
@@ -38,4 +39,4 @@ export class splash extends Component {
   }
 }
 
-export const Splash = splash;
+export const Splash = pureRender(splash);
