@@ -35,6 +35,12 @@ export class router extends Component {
               type="replace"
             />
             <Route
+              component={container.Category}
+              name="category"
+              schema="normal"
+              title="category"
+            />
+            <Route
               component={container.Stats}
               name="stats"
               schema="normal"

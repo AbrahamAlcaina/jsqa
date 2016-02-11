@@ -22,4 +22,4 @@ categoriesComponent.propTypes = {
   })
 };
 
-export const Categories = pureRender(categoriesComponent, 'categories');
+export const Categories = pureRender(categoriesComponent);
