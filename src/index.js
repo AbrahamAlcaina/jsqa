@@ -7,9 +7,7 @@ export const initialize = () => {
   const store = configureStore();
   const application = () =>
     (
-      <Provider store={store}>
-          <RouterApp />
-      </Provider>
+      <RouterApp />
     );
   application.displayName = 'Applicaiton container';
   application.childContextTypes = {

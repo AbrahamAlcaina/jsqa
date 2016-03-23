@@ -1,59 +1,57 @@
-import React, { Navigator, PropTypes, Component } from 'react-native';
-import { Router, Route, Schema } from 'react-native-router-flux';
+import React, { Navigator, PropTypes } from 'react-native';
+import { Router, Scene, Schema } from 'react-native-router-flux';
 import * as container from './containers';
 
-export class router extends Component {
-  static displayName = 'router';
-  static contextTypes = {
-    store: PropTypes.object.isRequired
-  };
-  render() {
-    return (
-        <Router>
-            <Schema
-              footer={container.Nav}
-              name="normal"
-              sceneConfig={Navigator.SceneConfigs.FloatFromBottom}
-            />
-            <Route
-              component={container.Splash}
-              initial
-              name="splash"
-              title="Splash"
-            />
-            <Route
-              component={container.Categories}
-              name="categories"
-              schema="normal"
-              title="categories"
-            />
-            <Route
-              component={container.Categories}
-              name="home"
-              schema="normal"
-              title="categories"
-              type="replace"
-            />
-            <Route
-              component={container.Category}
-              name="category"
-              schema="normal"
-              title="category"
-            />
-            <Route
-              component={container.Stats}
-              name="stats"
-              schema="normal"
-              title="stats"
-            />
-            <Route
-              component={container.Test}
-              name="test"
-              schema="normal"
-              title="Test"
-            />
-        </Router>
-    );
-  }
-}
+const router = () => (
+    <Router>
+        <Schema
+          footer={container.Nav}
+          key="normal"
+          sceneConfig={Navigator.SceneConfigs.FloatFromBottom}
+        />
+        <Scene
+          component={container.Splash}
+          initial
+          key="splash"
+          title="Splash"
+        />
+        <Scene
+          component={container.Categories}
+          key="categories"
+          schema="normal"
+          title="categories"
+        />
+        <Scene
+          component={container.Categories}
+          key="home"
+          schema="normal"
+          title="categories"
+          type="replace"
+        />
+        <Scene
+          component={container.Category}
+          key="category"
+          schema="normal"
+          title="category"
+        />
+        <Scene
+          component={container.Stats}
+          key="stats"
+          schema="normal"
+          title="stats"
+        />
+        <Scene
+          component={container.Test}
+          key="test"
+          schema="normal"
+          title="Test"
+        />
+    </Router>
+);
+
+router.displayName = 'router';
+router.contextTypes = {
+  store: PropTypes.object.isRequired
+};
+
 export const RouterApp = router;
